@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.home{
   min-height: 100vh;
+}
+
+header{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+footer{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
+h2{
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 30px;
+  color: #1f1f1f;
+}
+
+a{
+  text-decoration: none;
+}
+
+.iconwrapper{
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.icon{
+  margin-right: 6px;
+  transform: translateY(1px);
+  color: #fefefe;
+}
+
+header, a, h3{
+  color: #1f1f1f;
+}
+
+@keyframes load {
   from {
-    transform: rotate(0deg);
+      left: -150px;
   }
-  to {
-    transform: rotate(360deg);
+  to   {
+      left: 100%;
   }
+}
+
+.loading{
+  position: relative;
+  overflow: hidden;
+  height:100%;
+  width:100%;
+}
+
+.loading::before{
+  content: '';
+  display: block;
+  position: absolute;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  background: linear-gradient(to right,transparent 0%,#fafafa 80%,transparent 100%);
+  animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+.skeleton{
+  height: 350px;
+  background-color: #efefef;
+  border-radius: 20px;
 }

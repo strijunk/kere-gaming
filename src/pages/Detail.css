@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 720px;
+    margin: auto;
+}
+
+.container img{
+    width: 100%;
+    margin: 14px 0 14px;
+}
