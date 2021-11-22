@@ -18,10 +18,13 @@ header{
 }
 
 footer{
+  z-index: 1;
+  background: #ffffff;
   display: flex;
   justify-content: center;
-  position: absolute;
-  bottom: 12px;
+  position: fixed;
+  bottom: 0;
+  padding: 12px;
   width: 100%;
 }
 
