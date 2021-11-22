@@ -21,3 +21,9 @@ h3{
 img{
     border-radius: 10px;
 }
+
+@media (max-width: 480px) {
+    .content{
+        grid-template-columns: repeat(1, minmax(0,1fr));
+    }
+}
