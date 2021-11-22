@@ -1,5 +1,6 @@
 import React from 'react'
 import {AiFillInstagram, AiFillGithub} from 'react-icons/ai'
+import "./CardProfile.css"
 
 export default function CardProfile({avatar, nama, nim, ig, github}){
     return(
@@ -14,8 +15,10 @@ export default function CardProfile({avatar, nama, nim, ig, github}){
                 </div>
             </div>
             <div className="profile-details">
-                <p>Nama: {nama}</p>
-                <p>NIM: {nim}</p>
+                <p>Nama : {nama}</p>
+                <p>NIM : {nim}</p>
+                <p>ig : {ig} </p>
+                <p>github : {github} </p>
             </div>
         </div>
     )

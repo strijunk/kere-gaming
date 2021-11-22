@@ -8,13 +8,20 @@
 
 .home{
   min-height: 100vh;
+  margin-bottom: 30px;
 }
 
 header{
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #1f1f1f;
+}
+
+header p{
+  color: #fafafa;
 }
 
 footer{
@@ -31,8 +38,13 @@ footer{
 h2{
   margin: 0;
   font-family: 'Cinzel', serif;
-  font-size: 30px;
-  color: #1f1f1f;
+  font-size: 40px;
+  color: #fafafa;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
 }
 
 a{

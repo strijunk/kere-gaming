@@ -7,7 +7,6 @@ function Detail(){
     
     const[load, setload] = useState(false);
     
-
     const [game, setgame] = useState([]);
     const {id} = useParams()
     console.log(id)
@@ -41,13 +40,16 @@ function Detail(){
                     <h1 className="title">{game.title}</h1>
                     <div>
                         <img src={game.thumbnail}></img>
-                        <p>{game.short_description} </p>
+                        <p>{game.description}</p>
+                        <br></br>
                         <p>Genre : {game.genre}</p>
                         <p>Developer : {game.developer}</p>
+                        <p>Platform : {game.platform} </p>
+                        <p>Publisher : {game.publisher} </p>
+                        <p>Release Date : {game.release_date} </p>
                     </div>
                 </div>
             ) : <div className="loading skeleton"></div>}
-            
         </section>
     )
 }

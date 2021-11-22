@@ -28,7 +28,7 @@ function Game(){
 
     return(
         <section>
-            <h1 className="title">List Game Kere</h1>
+            <h1 className="title">List Game Kere-Hore</h1>
             <div className="content">
                 {
                     games.slice(0, 5).map((item, index) => (
@@ -36,6 +36,8 @@ function Game(){
                             <NavLink to={'/Detail/' + item.id}>
                                 <h3>{item.title}</h3>
                                 <img src={item.thumbnail}></img>
+                                <p>Genre : {item.genre}</p>
+                                <p>{item.short_description}</p>
                             </NavLink>
                         </div>
                     ))
