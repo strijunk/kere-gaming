@@ -4,8 +4,17 @@
     box-sizing: border-box;
 }
 
-.card-profile .profile-details{
+.profile-card{
+    margin: 20px 0 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+
+.avatar{
+    max-width: 275px;
+    border-radius: 50%;
+    margin: 0 0 20px;
 }

@@ -6,10 +6,7 @@ function Profile(){
 
     return(
         <section>
-            <h1 className="title">Profile</h1>
             <CardProfile></CardProfile>
-            <style>
-            </style>
         </section>
     )
 }
