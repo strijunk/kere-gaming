@@ -1,0 +1,13 @@
+.Text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.link{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    color: #fefefe;
+    background-color: #191922;
+}
