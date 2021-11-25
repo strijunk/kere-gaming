@@ -32,7 +32,7 @@ function Giveaway(){
             <h1 className="title">Giveaway time!</h1>
             <div className="content">
                 {
-                    giveaway.slice(4, 9).map((item, index) => (
+                    giveaway.slice(6, 11).map((item, index) => (
                         <div className="gamecard">
                             <NavLink to={'/Ga-detail/' + item.id}>
                                 <h3>{item.title}</h3>

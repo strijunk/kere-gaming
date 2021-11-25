@@ -5,9 +5,19 @@
 }
 
 .link{
+    margin: auto;
     display: flex;
     text-decoration: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
     justify-content: center;
+    text-align: center;
+    align-items: center;
     color: #fefefe;
     background-color: #191922;
+}
+
+.link:hover{
+    background-color: #242431;
 }

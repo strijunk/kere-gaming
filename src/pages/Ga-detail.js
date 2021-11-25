@@ -41,9 +41,9 @@ function Gadetail(){
                     <div>
                         <img src={gadetail.thumbnail}></img>
                         <p>{gadetail.description}</p>
-                        <br></br>
                         <p>end date :{gadetail.end_date}</p>
-                        <a className="link" href={gadetail.open_giveaway_url}>Get It!</a>
+                        <br></br>
+                        <a className="link" href={gadetail.open_giveaway_url}>Get Involved!</a>
                     </div>
                 </div>
             ) : <div className="loading skeleton"></div>}
