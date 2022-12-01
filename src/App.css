@@ -109,3 +109,11 @@ h3 {
   background-color: #efefef;
   border-radius: 20px;
 }
+
+.main {
+  padding-top: 40px;
+}
+
+.main.dark {
+  background: rgba(0, 0, 0, 0.9);
+}

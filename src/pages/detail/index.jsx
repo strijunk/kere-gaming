@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './detail.css';
+import { ThemeContext } from '../../components/Layout';
 
 function Detail() {
   const [load, setload] = useState(false);
@@ -37,8 +38,15 @@ function Detail() {
     fetchGamesData();
   }, [id]);
 
+  const [currentTheme, setCurrentTheme] = useState('light');
+  const theme = useContext(ThemeContext);
+
+  useEffect(() => {
+    setCurrentTheme(theme);
+  }, [theme]);
+
   return (
-    <section className='container'>
+    <section className={`container ${currentTheme === 'dark' ? 'dark' : ''}`}>
       {load ? (
         <div>
           <h1 className='title'>{game.title}</h1>

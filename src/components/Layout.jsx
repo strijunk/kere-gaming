@@ -1,12 +1,13 @@
-import React, { useState, createContext, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import useClearance from '../core/hooks/useClearance';
-import { GrGamepad, GrUser, GrGift } from 'react-icons/gr';
+import { GrGamepad, GrUser, GrGift, GrMoon, GrSun } from 'react-icons/gr';
 import { NavLink } from 'react-router-dom';
 
-export const LanguagesContext = createContext(null);
+export const ThemeContext = createContext(null);
 
 const Layout = ({ children }) => {
   const [minHeight, upperRef, lowerRef] = useClearance();
+  const [theme, setTheme] = useState('light');
 
   return (
     <>
@@ -16,9 +17,16 @@ const Layout = ({ children }) => {
         </NavLink>
         <p>Solusi gaming tanpa menyiksa dompet</p>
       </header>
-      <LanguagesContext.Provider value={'language'}>
-        <main style={{ minHeight, paddingTop: '40px' }}>{children}</main>
-      </LanguagesContext.Provider>
+      <ThemeContext.Provider value={theme}>
+        <main
+          className={`main ${theme === 'dark' ? 'dark' : ''}`}
+          style={{
+            minHeight,
+          }}
+        >
+          {children}
+        </main>
+      </ThemeContext.Provider>
       <footer ref={lowerRef}>
         <NavLink to='/' className='iconwrapper'>
           <GrGamepad className='icon' />
@@ -32,6 +40,25 @@ const Layout = ({ children }) => {
           <GrUser className='icon' />
           Profile
         </NavLink>
+        <div
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          className='iconwrapper'
+          style={{
+            cursor: 'pointer',
+          }}
+        >
+          {theme === 'light' ? (
+            <>
+              <GrMoon className='icon' />
+              Dark Mode
+            </>
+          ) : (
+            <>
+              <GrSun className='icon' />
+              Light Mode
+            </>
+          )}
+        </div>
       </footer>
     </>
   );

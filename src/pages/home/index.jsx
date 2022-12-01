@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import './home.css';
+import { ThemeContext } from '../../components/Layout';
 
 const Home = () => {
   const [games, setgames] = useState([]);
   const [filteredGames, setFilteredGames] = useState([]);
   const [keyword, setKeyword] = useState('');
+  const [currentTheme, setCurrentTheme] = useState('light');
+  const theme = useContext(ThemeContext);
+
+  useEffect(() => {
+    setCurrentTheme(theme);
+  }, [theme]);
+
   useEffect(() => {
     async function fetchGamesData() {
       var options = {
@@ -41,7 +49,7 @@ const Home = () => {
     );
   }, [keyword, games]);
   return (
-    <section>
+    <section className={`section ${currentTheme === 'dark' ? 'dark' : ''}`}>
       <div
         style={{
           display: 'flex',

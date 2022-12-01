@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './ga-detail.css';
+import { ThemeContext } from '../../components/Layout';
 
 function Gadetail() {
   const [load, setload] = useState(false);
@@ -36,8 +37,15 @@ function Gadetail() {
     fetchGadetail();
   }, [id]);
 
+  const [currentTheme, setCurrentTheme] = useState('light');
+  const theme = useContext(ThemeContext);
+
+  useEffect(() => {
+    setCurrentTheme(theme);
+  }, [theme]);
+
   return (
-    <section className='container'>
+    <section className={`container ${currentTheme === 'dark' ? 'dark' : ''}`}>
       {load ? (
         <div>
           <h1 className='title'>{gadetail.title}</h1>

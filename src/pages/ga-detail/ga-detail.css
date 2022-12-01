@@ -1,0 +1,8 @@
+.container.dark h1,
+.container.dark h2,
+.container.dark h3,
+.container.dark h4,
+.container.dark h5,
+.container.dark p {
+  color: white;
+}

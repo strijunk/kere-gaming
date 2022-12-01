@@ -21,3 +21,12 @@
 .link:hover {
   background-color: #242431;
 }
+
+.section.dark h1,
+.section.dark h2,
+.section.dark h3,
+.section.dark h4,
+.section.dark h5,
+.section.dark p {
+  color: white;
+}

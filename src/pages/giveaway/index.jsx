@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import './giveaway.css';
+import { ThemeContext } from '../../components/Layout';
 
 function Giveaway() {
   const [giveaway, setgiveaway] = useState([]);
@@ -31,8 +32,15 @@ function Giveaway() {
     fetchGiveawayData();
   }, []);
 
+  const [currentTheme, setCurrentTheme] = useState('light');
+  const theme = useContext(ThemeContext);
+
+  useEffect(() => {
+    setCurrentTheme(theme);
+  }, [theme]);
+
   return (
-    <section>
+    <section className={`section ${currentTheme === 'dark' ? 'dark' : ''}`}>
       <h1 className='title'>Giveaway time!</h1>
       <div className='content'>
         {giveaway.slice(6, 11).map((item, index) => (
